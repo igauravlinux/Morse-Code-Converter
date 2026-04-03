@@ -21,9 +21,15 @@ public class Main{
             boolean found = false;
             char key = str.charAt(i);
 
+            if(key == ' '){
+                System.out.print("/");
+                continue;
+            }
+
             for(int j = 0; j < arr.length; j++){
                 if(arr[j] == key){
-                    System.out.println("found at "+j);
+
+                    System.out.print(morse[j] +" ");
                     found = true;
                     break;
                 }
@@ -31,10 +37,9 @@ public class Main{
                 if(!found){
                     System.out.println("Not found");
                 }
-
-
-
         }
+
+
 
 
 
