@@ -1,13 +1,50 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " +  i);
+//        Taking text input from user
+        String str;
+        System.out.print("Type text to convert into morse code: ");
+        str = sc.nextLine().toUpperCase();
+
+//        letters array
+        char arr[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+
+//        morse array
+        String morse[] = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+
+
+//      here I'm using linear search for every letters
+        for(int i = 0; i < str.length(); i++){
+
+            boolean found = false;
+            char key = str.charAt(i);
+
+            for(int j = 0; j < arr.length; j++){
+                if(arr[j] == key){
+                    System.out.println("found at "+j);
+                    found = true;
+                    break;
+                }
+            }
+                if(!found){
+                    System.out.println("Not found");
+                }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }
