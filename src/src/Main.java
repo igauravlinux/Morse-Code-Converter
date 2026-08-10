@@ -28,7 +28,37 @@ public class Main{
 
         }
 
-        static void morseToText(){
+        static void morseToText(char arr[] ,String morse[] ,String minput){
+
+            String words[] = minput.split(" / ");
+
+
+            for(int i = 0; i < words.length; ++i){
+
+                boolean found = false;
+                String key[] = words[i].split(" ");
+
+
+
+                for(int j = 0; j < key.length; ++j){
+                    for(int k = 0; k < arr.length; ++k){
+                        if(key[j].equals(morse[k])){
+                            System.out.print(arr[k]);
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+
+                System.out.print(" ");
+
+                if(!found){
+                    System.out.print("Not found");
+                }
+
+
+            }
+
 
         }
 
@@ -63,9 +93,10 @@ public class Main{
                     break;
 
                 case 2:
-                    System.out.println("Enter morse: ");
+                    System.out.print("Enter morse: ");
                     String morseInput = sc.nextLine();
-//                    morse to call
+                    morseToText(arr,morse,morseInput);
+                    System.out.println();
                     break;
 
                 case 3:
